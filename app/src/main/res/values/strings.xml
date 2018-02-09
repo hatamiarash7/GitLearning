@@ -1,3 +1,12 @@
 <resources>
 	<string name="app_name">آموزش گیت</string>
+	<string name="close">بستن</string>
+	<string name="about_action">درباره</string>
+	<string name="about_title"><![CDATA[
+        <b>%1$s</b>&nbsp;<font color="#888888">%2$s</font>
+    ]]></string>
+	<string name="about_message"><![CDATA[
+        Git Learning is a free app.
+        Copyright 2018 <a href="http://arash-hatami.ir">Arash Hatami</a>. All Rights Reserved.<br/>
+    ]]></string>
 </resources>

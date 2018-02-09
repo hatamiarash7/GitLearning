@@ -1,6 +1,7 @@
 package ir.hatamiarash.gitlearning;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 import co.ronash.pushe.Pushe;
 import ir.hatamiarash.adapter.ItemAdapter;
 import ir.hatamiarash.helper.CustomPrimaryDrawerItem;
+import ir.hatamiarash.helper.DialogHelper;
 import ir.hatamiarash.helper.FontHelper;
 import ir.hatamiarash.helper.Helper;
 import ir.hatamiarash.models.Item;
@@ -68,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		
 		PrimaryDrawerItem item_home = new CustomPrimaryDrawerItem().withIdentifier(1).withName("صفحه اصلی").withIcon(GoogleMaterial.Icon.gmd_home);
+		PrimaryDrawerItem item_about = new CustomPrimaryDrawerItem().withIdentifier(2).withName("درباره ما").withIcon(GoogleMaterial.Icon.gmd_info);
 		
 		
 		IDrawerItem items[] = new IDrawerItem[]{
 				item_home,
+				item_about,
 		};
 		
 		result = new DrawerBuilder()
@@ -89,7 +93,13 @@ public class MainActivity extends AppCompatActivity {
 						if (drawerItem != null) {
 							long item = drawerItem.getIdentifier();
 							if (item == 1) {
-							
+								Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+								intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+								startActivity(intent);
+								finish();
+							}
+							if(item == 2){
+								DialogHelper.showAboutDialog(MainActivity.this);
 							}
 						}
 						return false;

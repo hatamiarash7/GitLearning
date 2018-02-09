@@ -6,6 +6,9 @@
 		<item name="android:textColorPrimary">@color/textColorPrimary</item>
 		<item name="android:textColorSecondary">@color/textColorSecondary</item>
 		<item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>
+		<item name="textAppearanceDialogTitle">@style/TextAppearance.Dialog.Title</item>
+		<item name="textAppearanceDialogMessage">@style/TextAppearance.Dialog.Message</item>
+		<item name="textAppearanceDialogInfo">@style/TextAppearance.Dialog.Info</item>
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
@@ -14,5 +17,20 @@
 
 	<style name="AppTheme.Widget.TextView" parent="android:Widget.Holo.Light.TextView">
 		<item name="fontPath">fonts/iransans.ttf</item>
+	</style>
+
+	<style name="TextAppearance.Dialog.Title" parent="android:TextAppearance.Holo.Large">
+		<item name="android:fontFamily">sans-serif-condensed</item>
+		<item name="android:textSize">24sp</item>
+	</style>
+
+	<style name="TextAppearance.Dialog.Message" parent="android:TextAppearance.Holo.Small">
+		<item name="android:lineSpacingMultiplier">1.2</item>
+		<item name="android:fontFamily">sans-serif-light</item>
+		<item name="android:textSize">16sp</item>
+	</style>
+
+	<style name="TextAppearance.Dialog.Info" parent="android:TextAppearance.Holo.Small">
+		<item name="android:fontFamily">sans-serif-condensed</item>
 	</style>
 </resources>
