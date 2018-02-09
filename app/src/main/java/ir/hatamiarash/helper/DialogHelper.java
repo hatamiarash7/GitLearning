@@ -37,9 +37,8 @@ public class DialogHelper {
 		FragmentManager fm = activity.getFragmentManager();
 		FragmentTransaction ft = fm.beginTransaction();
 		Fragment prev = fm.findFragmentByTag(tag);
-		if (prev != null) {
+		if (prev != null)
 			ft.remove(prev);
-		}
 		ft.addToBackStack(null);
 		
 		try {
@@ -78,9 +77,7 @@ public class DialogHelper {
 		 * @see #wrap(int)
 		 */
 		static final int LAYOUT_SKELETON = 1;
-		
 		final Context mContext;
-		
 		private Drawable mIcon;
 		private CharSequence mTitleText;
 		private CharSequence mMessageText;
@@ -214,8 +211,8 @@ public class DialogHelper {
 			
 			ViewGroup rootLayout = (ViewGroup) createSkeletonView();
 			View bodyRootView = inflater.inflate(R.layout.dialog, rootLayout, false);
-			ViewGroup bodyLayout = (ViewGroup) bodyRootView.findViewById(R.id.content);
-			TextView messageView = (TextView) bodyLayout.findViewById(R.id.message);
+			ViewGroup bodyLayout = bodyRootView.findViewById(R.id.content);
+			TextView messageView = bodyLayout.findViewById(R.id.message);
 			
 			rootLayout.addView(bodyRootView);
 			
@@ -244,7 +241,7 @@ public class DialogHelper {
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			
 			ViewGroup rootLayout = (ViewGroup) inflater.inflate(R.layout.dialog_skeleton, null);
-			TextView titleView = (TextView) rootLayout.findViewById(R.id.title);
+			TextView titleView = rootLayout.findViewById(R.id.title);
 			
 			// Setup title
 			if (mTitleText != null) {

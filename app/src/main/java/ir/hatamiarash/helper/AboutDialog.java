@@ -17,14 +17,7 @@ import android.view.View;
 
 import ir.hatamiarash.gitlearning.R;
 
-
-/**
- * Dialog fragment that shows some info about this application.
- *
- * @author Artem Chepurnoy
- */
 public class AboutDialog extends DialogFragment {
-
     private static final String VERSION_UNAVAILABLE = "N/A";
 
     /**
@@ -37,20 +30,15 @@ public class AboutDialog extends DialogFragment {
         try {
             PackageInfo info = pm.getPackageInfo(packageName, 0);
             versionName = info.versionName;
-
             // Make the info part of version name a bit smaller.
-            if (versionName.indexOf('-') >= 0) {
+            if (versionName.indexOf('-') >= 0)
                 versionName = versionName.replaceFirst("\\-", "<small>-") + "</small>";
-            }
         } catch (PackageManager.NameNotFoundException e) {
             versionName = VERSION_UNAVAILABLE;
         }
 
         Resources res = context.getResources();
-        return Html.fromHtml(
-                res.getString(R.string.about_title,
-                        res.getString(R.string.app_name), versionName)
-        );
+        return Html.fromHtml(res.getString(R.string.about_title,res.getString(R.string.app_name), versionName));
     }
 
     @Override
@@ -58,8 +46,7 @@ public class AboutDialog extends DialogFragment {
         Context context = getActivity();
         assert context != null;
 
-        CharSequence message = Html.fromHtml(getString(
-                R.string.about_message));
+        CharSequence message = Html.fromHtml(getString(R.string.about_message));
 
         View view = new DialogHelper.Builder(context)
                 .setIcon(getResources().getDrawable(R.mipmap.ic_launcher))
