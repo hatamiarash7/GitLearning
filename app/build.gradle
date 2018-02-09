@@ -28,14 +28,17 @@ dependencies {
 	implementation 'com.android.support:recyclerview-v7:26.1.0'
 	implementation "com.android.support:support-annotations:26.1.0"
 	implementation "com.android.support:design:26.1.0"
+	implementation 'com.android.support:cardview-v7:26.1.0'
 	implementation 'com.google.firebase:firebase-core:11.8.0'
 	implementation 'com.google.android.gms:play-services-gcm:11.8.0'
 	implementation("com.mikepenz:materialdrawer:6.0.6@aar") {
 		transitive = true
 	}
-	compile 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
+	implementation 'com.mikepenz:google-material-typeface:3.0.1.1.original@aar'
 	implementation 'co.ronash.android:pushe-base:1.3.4'
 	implementation 'com.jakewharton:butterknife:8.8.1'
+	implementation 'uk.co.chrisjenx:calligraphy:2.3.0'
+	implementation 'com.github.GrenderG:Toasty:1.2.8'
 	annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
 
