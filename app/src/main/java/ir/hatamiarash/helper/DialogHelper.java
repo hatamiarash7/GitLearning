@@ -24,6 +24,7 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import ir.hatamiarash.gitlearning.R;
+import ir.hatamiarash.utils.Items;
 
 public class DialogHelper {
 	
@@ -213,16 +214,23 @@ public class DialogHelper {
 			View bodyRootView = inflater.inflate(R.layout.dialog, rootLayout, false);
 			ViewGroup bodyLayout = bodyRootView.findViewById(R.id.content);
 			TextView messageView = bodyLayout.findViewById(R.id.message);
+			TextView countView = bodyLayout.findViewById(R.id.count);
 			
 			rootLayout.addView(bodyRootView);
 			
 			// Setup content
 			bodyLayout.removeView(messageView);
+			bodyLayout.removeView(countView);
 			if (!TextUtils.isEmpty(mMessageText)) {
 				messageView.setMovementMethod(new LinkMovementMethod());
 				messageView.setText(mMessageText);
 				bodyLayout.addView(messageView);
 			}
+			int count = Items.items.length;
+			countView.setMovementMethod(new LinkMovementMethod());
+			countView.setText("تعداد دستورات در این نسخه : " + String.valueOf(count));
+			bodyLayout.addView(countView);
+			
 			
 			// Custom view
 			if (customViewRes != 0) customView = inflater.inflate(customViewRes, bodyLayout, false);

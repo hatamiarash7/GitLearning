@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 	
 	private void LoadItems() {
 		for (String[] item : Items.items) {
-			itemList.add(new Item(item[0], item[1], item[2]));
+			itemList.add(new Item(item[0], item[1]));
 		}
 		itemAdapter.notifyDataSetChanged();
 	}
